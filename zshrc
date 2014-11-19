@@ -33,6 +33,7 @@ export CUSTOM_VIMRC=$VIMDIR/skillit.vim
 export CUSTOM_VIMRC=$VIMDIR/skillit.vim
 export GOPATH=$HOME/projects
 export PATH=$GOPATH/bin:$PATH
+export GITHUB=$HOME/github
 
 alias cp='cp -i'
 alias diff='colordiff'
@@ -54,14 +55,14 @@ alias vims='vim --servername SAMPLESERVER'
 local smiley="%(?,%{$fg[green]%}✓%{$reset_color%},%{$fg[red]%}✗%{$reset_color%})"
 
 # Show Git branch in prompt.
-source /usr/local/google/home/mohammadm/github/zsh-git-prompt/zshrc.sh
+source $GITHUB/zsh-git-prompt/zshrc.sh
 
 # Prompt customization.
 PROMPT='┌ %U%*%u - $(git_super_status) %{$fg[red]%}%n@%{$fg[green]%}%m - %{$reset_color%}%B[%~]%b
 └→[${smiley}] ⚑⚑⚑ '
 
 # Enable syntax highlighting.
-source ~/github/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source $GITHUB/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # Predictable SSH authentication socket location.
 SOCK="/tmp/ssh-agent-$USER-screen"
