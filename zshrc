@@ -29,8 +29,6 @@ setopt prompt_subst
 export EDITOR=vim
 export VIMDIR=$HOME/.vim/
 export VIMRC=$VIMDIR/vimrc
-export CUSTOM_VIMRC=$VIMDIR/skillit.vim
-export CUSTOM_VIMRC=$VIMDIR/skillit.vim
 export GOPATH=$HOME/projects
 export PATH=$GOPATH/bin:$PATH
 export GITHUB=$HOME/github
