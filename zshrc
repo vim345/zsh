@@ -27,7 +27,7 @@ setopt prompt_subst
 
 # Env Variables.
 export EDITOR=vim
-export VIMDIR=$HOME/.vim/
+export VIMDIR=$HOME/.vim
 export VIMRC=$VIMDIR/vimrc
 export GOPATH=$HOME/projects
 export PATH=$GOPATH/bin:$PATH
@@ -48,6 +48,7 @@ alias openports='netstat --all --numeric --programs --inet'
 alias vdir='vdir --color=auto'
 alias vimc='vim --servername SAMPLESERVER --remote-tab-silent'
 alias vims='vim --servername SAMPLESERVER'
+alias update_subs='git submodule foreach git pull origin master'
 
 # Save a smiley to a local variable if the last command exited with success.
 local smiley="%(?,%{$fg[green]%}✓%{$reset_color%},%{$fg[red]%}✗%{$reset_color%})"
