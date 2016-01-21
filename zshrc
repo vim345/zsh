@@ -39,10 +39,10 @@ alias dir='dir --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
-alias l='ls -CF'
-alias la='ls -A'
-alias ll='ls -alFh'
-alias ls='ls --color=auto'
+#alias l='ls -CF'
+#alias la='ls -A'
+#alias ll='ls -alFh'
+#alias ls='ls --color=auto'
 alias mv='mv -i'
 alias openports='netstat --all --numeric --programs --inet'
 alias vdir='vdir --color=auto'
@@ -71,3 +71,23 @@ then
     ln -sf $SSH_AUTH_SOCK $SOCK
     export SSH_AUTH_SOCK=$SOCK
 fi
+
+# Directory stacking.
+DIRSTACKFILE="$HOME/.cache/zsh/dirs"
+if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
+  dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
+  [[ -d $dirstack[1] ]] && cd $dirstack[1]
+fi
+chpwd() {
+  print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
+}
+
+DIRSTACKSIZE=20
+
+setopt autopushd pushdsilent pushdtohome
+
+## Remove duplicate entries
+setopt pushdignoredups
+
+## This reverts the +/- operators.
+setopt pushdminus
