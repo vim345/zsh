@@ -49,6 +49,8 @@ alias vdir='vdir --color=auto'
 alias vimc='vim --servername SAMPLESERVER --remote-tab-silent'
 alias vims='vim --servername SAMPLESERVER'
 alias update_subs='git submodule foreach git pull origin master'
+# Remove all vim swap files in a directory.
+alias remove_swap='find ./ -type f -name "\.*sw[klmnop]" -delete'
 
 # Save a smiley to a local variable if the last command exited with success.
 local smiley="%(?,%{$fg[green]%}✓%{$reset_color%},%{$fg[red]%}✗%{$reset_color%})"
