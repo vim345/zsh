@@ -6,12 +6,6 @@ setopt appendhistory
 unsetopt autocd beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/usr/local/google/home/mohammadm/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
 
 # Format tab completion.
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
@@ -56,14 +50,14 @@ alias remove_swap='find ./ -type f -name "\.*sw[klmnop]" -delete'
 local smiley="%(?,%{$fg[green]%}✓%{$reset_color%},%{$fg[red]%}✗%{$reset_color%})"
 
 # Show Git branch in prompt.
-source $GITHUB/zsh-git-prompt/zshrc.sh
+source plugins/zsh-git-prompt/zshrc.sh
 
 # Prompt customization.
 PROMPT='┌ %U%*%u - $(git_super_status) %{$fg[red]%}%n@%{$fg[green]%}%m - %{$reset_color%}%B[%~]%b
 └→[${smiley}] ⚑⚑⚑ '
 
 # Enable syntax highlighting.
-source $GITHUB/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # Predictable SSH authentication socket location.
 SOCK="/tmp/ssh-agent-$USER-screen"
