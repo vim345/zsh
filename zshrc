@@ -50,14 +50,14 @@ alias remove_swap='find ./ -type f -name "\.*sw[klmnop]" -delete'
 local smiley="%(?,%{$fg[green]%}✓%{$reset_color%},%{$fg[red]%}✗%{$reset_color%})"
 
 # Show Git branch in prompt.
-source plugins/zsh-git-prompt/zshrc.sh
+source $GITHUB/vim345/zsh/plugins/zsh-git-prompt/zshrc.sh
 
 # Prompt customization.
 PROMPT='┌ %U%*%u - $(git_super_status) %{$fg[red]%}%n@%{$fg[green]%}%m - %{$reset_color%}%B[%~]%b
 └→[${smiley}] ⚑⚑⚑ '
 
 # Enable syntax highlighting.
-source plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source $GITHUB/vim345/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # Predictable SSH authentication socket location.
 SOCK="/tmp/ssh-agent-$USER-screen"
