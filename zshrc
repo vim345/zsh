@@ -29,6 +29,7 @@ setopt prompt_subst
 export EDITOR=vim
 export VIMDIR=$HOME/.vim
 export VIMRC=$VIMDIR/vimrc
+export CUSTOM_VIMRC=$VIMDIR/personal.vim
 export GOPATH=$HOME/projects
 export PATH=$GOPATH/bin:$PATH
 export GITHUB=$HOME/github
@@ -59,14 +60,14 @@ alias replace_str='find . -name "*.html" -print0 | xargs -0 sed -i "" -e "s/toke
 local smiley="%(?,%{$fg[green]%}✓%{$reset_color%},%{$fg[red]%}✗%{$reset_color%})"
 
 # Show Git branch in prompt.
-source $GITHUB/zsh-git-prompt/zshrc.sh
+source $GITHUB/vim345/zsh/plugins/zsh-git-prompt/zshrc.sh
 
 # Prompt customization.
 PROMPT='┌ %U%*%u - $(git_super_status) %{$fg[red]%}%n@%{$fg[green]%}%m - %{$reset_color%}%B[%~]%b
 └→[${smiley}] ⚑⚑⚑ '
 
 # Enable syntax highlighting.
-source $GITHUB/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source $GITHUB/vim345/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # Predictable SSH authentication socket location.
 SOCK="/tmp/ssh-agent-$USER-screen"
