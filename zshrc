@@ -7,7 +7,7 @@ unsetopt autocd beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '~/.zshrc'
+zstyle :compinstall filename '~/.zshrc_comp'
 
 autoload -Uz compinit
 compinit
