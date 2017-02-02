@@ -7,7 +7,7 @@ unsetopt autocd beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/usr/local/google/home/mohammadm/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -51,6 +51,9 @@ alias vims='vim --servername SAMPLESERVER'
 alias update_subs='git submodule foreach git pull origin master'
 # Remove all vim swap files in a directory.
 alias remove_swap='find ./ -type f -name "\.*sw[klmnop]" -delete'
+# Remove all pyc files in a directory.
+alias remove_pyc='find . -name "*.pyc" -exec rm -rf {} \;'
+alias replace_str='find . -name "*.html" -print0 | xargs -0 sed -i "" -e "s/token-search/token-options/g"'
 
 # Save a smiley to a local variable if the last command exited with success.
 local smiley="%(?,%{$fg[green]%}✓%{$reset_color%},%{$fg[red]%}✗%{$reset_color%})"
